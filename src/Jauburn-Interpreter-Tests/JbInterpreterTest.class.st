@@ -84,6 +84,8 @@ JbInterpreterTest >> testCorrectEqualityEvaluation [
 	self deny: retVal.
 	retVal := (parser expression parse: '2 == 4 - 2') evaluateIn: interpreter environment.
 	self assert: retVal.
+	retVal := (parser expression parse: '2 == 4 / 2') evaluateIn: interpreter environment.
+	self assert: retVal.
 ]
 
 { #category : #tests }
