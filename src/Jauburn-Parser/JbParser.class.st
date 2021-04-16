@@ -3,7 +3,6 @@ I am a parser for the Jauburn language.
 
 EBNF
 
-
 <program> ::=
    <statement>*
 
@@ -139,7 +138,8 @@ Class {
 		'stringExpression',
 		'stringComparisonExpression',
 		'booleanExpression',
-		'functionCallStatement'
+		'functionCallStatement',
+		'whileStatement'
 	],
 	#category : #'Jauburn-Parser-Core'
 }
@@ -416,7 +416,7 @@ JbParser >> start [
 JbParser >> statement [
 
 	^ variableDeclarationStatement / assignmentStatement
-		/ ifElseStatement / ifStatement / returnStatement / functionCallStatement
+		/ ifElseStatement / ifStatement / returnStatement / functionCallStatement / whileStatement
 ]
 
 { #category : #statements }
@@ -460,5 +460,21 @@ JbParser >> variableDeclarationStatement [
 			JbVariableDeclarationStatementNode new
 				identifier: arr second;
 				expression: arr fourth;
+				yourself ]
+]
+
+{ #category : #statements }
+JbParser >> whileStatement [
+
+	^'while' asParser trim
+	, $( asParser trim
+	, expression
+	, $) asParser trim 
+	, statementBlock
+		 ==>
+		[ :arr |
+			JbWhileLoopNode new
+				condition: arr third;
+				statements: arr fifth;
 				yourself ]
 ]

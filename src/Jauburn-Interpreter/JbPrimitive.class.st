@@ -24,5 +24,7 @@ JbPrimitive >> block: anObject [
 JbPrimitive >> call: arguments in: callEnvironment [
 	"You need to implement this method!  arguments will contain the arguments to pass to this function and callEnvironment will contain the environment in place when this function was called."
 	
-	self shouldBeImplemented 
+	| vals |
+	vals := arguments collect: [ :arg | arg evaluateIn: callEnvironment ].
+	^self block valueWithArguments: vals. 
 ]

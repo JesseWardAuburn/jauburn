@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to handle function definition (e.g., var func = function() { return 3; };).
+"
 Class {
 	#name : #JbFunctionNode,
 	#superclass : #Object,

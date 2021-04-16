@@ -1,3 +1,6 @@
+"
+A JAuburn AST Node to hold arity-1 operations (specifically, negation).
+"
 Class {
 	#name : #JbArity1OperatorNode,
 	#superclass : #Object,

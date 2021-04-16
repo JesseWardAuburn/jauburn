@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to handle if statements (e.g., if (x == 3) { result = 7; };).
+"
 Class {
 	#name : #JbIfNode,
 	#superclass : #Object,

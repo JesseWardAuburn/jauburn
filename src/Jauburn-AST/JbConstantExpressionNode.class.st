@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to hold constant values (e.g., 3).
+"
 Class {
 	#name : #JbConstantExpressionNode,
 	#superclass : #Object,

@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to handle function calls, either as a statement (e.g., func();) or an expression (e.g., var x = func();).
+"
 Class {
 	#name : #JbFunctionCallNode,
 	#superclass : #Object,

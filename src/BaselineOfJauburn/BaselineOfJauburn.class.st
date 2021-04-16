@@ -1,3 +1,6 @@
+"
+Sets dependencies for JAuburn project.
+"
 Class {
 	#name : #BaselineOfJauburn,
 	#superclass : #BaselineOf,

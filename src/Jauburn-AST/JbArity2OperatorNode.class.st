@@ -1,3 +1,6 @@
+"
+A JAuburn AST Node to hold arity-2 operations (arithmetic and logical operations).
+"
 Class {
 	#name : #JbArity2OperatorNode,
 	#superclass : #Object,

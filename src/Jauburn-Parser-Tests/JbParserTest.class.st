@@ -1,3 +1,6 @@
+"
+Unit testing of the JbParser.
+"
 Class {
 	#name : #JbParserTest,
 	#superclass : #PPCompositeParserTest,
@@ -285,4 +288,21 @@ JbParserTest >> testVariableDeclarationStatement [
 	self assert: stmt identifier equals: 'x'.
 	stmt := self parse: 'var monkey = 37*x;' rule: #variableDeclarationStatement.
 	self assert: stmt identifier equals: 'monkey'
+]
+
+{ #category : #'tests-statements' }
+JbParserTest >> testWhileStatement [
+
+	| stmt |
+	stmt := self parse: 'while (x <= 10) {sum = sum + x; x = x + 1;}' rule: #whileStatement.
+	self assert: stmt class equals: JbWhileLoopNode.
+]
+
+{ #category : #'tests-statements' }
+JbParserTest >> testWhileStatementInLargerProgram [
+
+	| pgm |
+	pgm := self parse: 'var x = 1; var sum = 0; while (x <= 10) {sum = sum + x; x = x + 1;} var result = sum;'.
+	self assert: pgm class equals: JbProgramNode.
+	self assert: (pgm statements at: 3) class equals: JbWhileLoopNode.
 ]

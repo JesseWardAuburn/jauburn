@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to handle assignment statements (e.g. x = 2, where x is a previously-declared variable).
+"
 Class {
 	#name : #JbAssignmentStatementNode,
 	#superclass : #Object,

@@ -1,3 +1,6 @@
+"
+Tests the number-parsing functionality of JbNumberParser.
+"
 Class {
 	#name : #JbNumberParserTest,
 	#superclass : #PPCompositeParserTest,

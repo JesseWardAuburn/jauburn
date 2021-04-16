@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to handle return statements (e.g., return 3;).
+"
 Class {
 	#name : #JbReturnStatementNode,
 	#superclass : #Object,

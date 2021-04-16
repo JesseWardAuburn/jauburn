@@ -1,3 +1,6 @@
+"
+A JAuburn AST node to handle variable declarations (e.g., var x = 3;).
+"
 Class {
 	#name : #JbVariableDeclarationStatementNode,
 	#superclass : #Object,
